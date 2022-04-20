@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.feng.mapper.PictureMapper">
+    <select id="getPathByName" resultType="String">
+        select path from picture where name=#{name};
+    </select>
+    <select id="getBlogByName" resultType="String">
+        select blog from picture where name=#{name};
+    </select>
+    <insert id="insertPicturePath" parameterType="com.feng.pojo.Picture">
+        insert into picture(name,path) values(#{name},#{path});
+    </insert>
+</mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.feng.mapper.CommentMapper">
+    <insert id="insertComment" parameterType="com.feng.pojo.Comment">
+        insert into comment(userName,content,commit) values(#{userName},#{content},#{commit});
+    </insert>
+    <select id="selectCommentById" resultType="com.feng.pojo.Comment">
+        select * from comment where id=#{id};
+    </select>
+    <select id="selectAllComments" resultType="com.feng.pojo.Comment">
+        select * from comment;
+    </select>
+    <delete id="deleteCommentById">
+        delete from comment where id = #{id};
+    </delete>
+</mapper>
